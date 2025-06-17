@@ -55,11 +55,32 @@ main{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    position: relative;
+    
 }
 #city-box{
     display: flex;
     flex-direction: column;
     gap: 5px;
+    position: relative;
+}
+#country-label{
+    font-size: large;
+    color: white;
+    font-weight: bold;
+}
+#city-label{
+    font-size: large;
+    color: white;
+    font-weight: bold;
+}
+input[type="text"]{
+    border: none;
+    border-radius: 5%;
+ border-bottom: 1px solid #6e6698;
+ height: 2rem;
+ width: 100%;
+ padding: 4px;
 }
 #input-box{
     width: 100%;
@@ -75,8 +96,9 @@ main{
      width: 90%;
      position: relative;
      display: flex;
-     justify-content: center;
+     justify-content: left;
      align-items: center;
+     overflow: hidden;
 }
 #sun-img{
     height: 90%;
@@ -89,16 +111,22 @@ main{
    display: flex;
    justify-content: center;
    align-items: center;
-   animation: rotateBackAndForth 7s infinite ease-in-out;
+   animation: rotateBackAndForth 10s infinite ease-in-out;
   transform-origin: center;
 
 }
 @keyframes rotateBackAndForth {
   0%   { transform: rotate(0deg);
-justify-content: flex-end; }
-  50%  { transform: rotate(70deg); }
+  justify-content: flex-end; }
+  50%  { transform: rotate(90deg); }
   100% { transform: rotate(0deg); 
-justify-content: flex-end;}
+   justify-content: flex-end;}
+}
+
+@keyframes moveCloud {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(150px); }
+  100% { transform: translateX(0); }
 }
 
 #cloud-img{
@@ -107,6 +135,8 @@ justify-content: flex-end;}
       width: 50%;
       margin-top: 10%;
       margin-right: 15%;
+      margin-left: 10%;
+     animation: moveCloud 10s infinite linear;
 }
 #cloud-img img{
  height: 100%;
@@ -125,6 +155,91 @@ input, label {
   }
 }
 
+/* information box */
+#info-box{
+    margin-bottom: 10%;
+    height: 70%;
+    width: 90%;
+    background-color: #8396ae;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 15%;
+    display: none;
+}
+#temp-box{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+#tmp-icon{
+     height: 100%;
+     width: 30%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+/* #image-tmp{
+    height: 80%;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+} */
+#tmpr{
+    height: 100%;
+    width: 40%;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    font-size: xx-large;
+    color: white;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+#tmp-details{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#tmp-name{
+    height: 50%;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: small;
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    padding: 1px;
+}
+#tmp-dis{
+    height: 50%;
+    width: 100%;
+    color: white;
+    font-size: small;
+}
+/* other informatiom */
+#other-info{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    color: white;
+    flex-wrap: wrap;
+    padding: 5%;
+}
+.box{
+    width: 50%;
+    height: 25%;
+}
 /* footer style  */
 #footer1{
     height: 4%;
@@ -141,36 +256,30 @@ input, label {
     align-items: center;
 
 }
-#footer2{
-    height: auto;
-    display: flex;
-    gap: 30px;
+#again-btn {
+    height: 7%;
+    width: 12%;
+    background-color: #778da9;
+    border: 1px solid white;
+    border-radius: 5%;
+    padding: 4px;
+    color: white;
+    display: none;
 }
-#footer-logo{
-    height: 5rem;
-    width: 20%;
-    background-color: aquamarine;
-}
-#footer-info{
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
 
+.suggestions-box {
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  position: absolute;
+  background: white;
+  z-index: 999;
+  top: 100%; /* exactly below the input field */
 }
-#footer-contact{
-    height: 5rem;
-    width: 5rem;
-    background-color:yellowgreen;
+.suggestions-box div {
+  padding: 5px;
+  cursor: pointer;
 }
-#footer-library{
-    height: 5rem;
-    width: 5rem;
-    background-color: blue;
-
-}
-#footer-social-links{
-     height: 5rem;
-     width: 5rem;
-     background-color: brown;
-
+.suggestions-box div:hover {
+  background-color: #f0f0f0;
 }

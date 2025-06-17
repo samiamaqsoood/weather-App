@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><Weather-App></Weather-App></title>
+    <title> Weather-App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/images/weather-icon.png" type="png">
 </head>
 <body>
     <header>
@@ -15,27 +16,30 @@
     </header>
     <main>
         <div id="main-box">
-            <div id="input-box">
+          <div id="input-box">
 
                     <div id="country-box">
 
                         <div id="country-label">
-                             <label for="country">Enter country name </label> 
+                             <label for="country">Enter country name :</label> 
                            </div>
 
                          <div id="country-input">
                               <input type="text" id="country" name="country-name" required placeholder="country">
                          </div>
+
+                         <div id="country-suggestions" class="suggestions-box"></div>
                  </div>
                  <div id="city-box">
                       <div id="city-label">
-                          <label for="city">Enter city name </label>
+                          <label for="city">Enter city name :</label>
                        </div>
                        <div id="city-input">
                           <input type="text" id="city" name="city-name" required placeholder="city">
                         </div>
+                        <div id="city-suggestions" class="suggestions-box"></div>
                  </div>
-             </div>
+            </div>
             <div id="sun-cloud">
                 <div id="sun-img">
             </div>
@@ -43,24 +47,37 @@
                     <img src="/images/cloud.png" alt="cloud-image" role="img">
                 </div>
             </div>
-            <div id="info-box"></div>
+            <div id="info-box">
+                  <div id="temp-box">
+                    <div id="tmp-icon">
+                        <img id="image-tmp" alt="weather-icon">
+                    </div>
+                     <div id="tmpr">Loading...</div>
+                     <div id="tmp-details">
+                            <div id="tmp-name">-</div>
+                            <div id="tmp-dis">---</div>
+                     </div>
+
+                  </div>
+                  <div id="other-info">
+                     <div id="feels-like" class="box">feels like : </div>
+                     <div id="min-temp" class="box">min temp :</div>
+                     <div id="max-temp" class="box">max temp :</div>
+                     <div id="presure" class="box">pressure :</div>
+                     <div id="humidityy" class="box">humidity :</div>
+                     <div id="sea-level" class="box">sea level :</div>
+                     <div id="ground-level" class="box">ground level :</div>
+                     <div id="wind-speed" class="box">wind speed :</div>
+                  </div>
+
+            </div>
         </div>
+
+        <button id="again-btn">Tap to check again!</button>
 
          <div id="footer1">Developed by Samiya Maqsood</div>
 
     </main>
-    <footer>
-       
-        <div id="footer2">
-            <div id="footer-logo">
-            </div>
-            <div id="footer-info">
-                <div id="footer-contact">Contact us</div>
-                <div id="footer-library">Libraries used</div>
-                <div id="footer-social-links">Social media</div>
-
-            </div>
-        </div>
-    </footer>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
